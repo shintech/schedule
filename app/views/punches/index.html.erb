@@ -1,0 +1,18 @@
+<%= button_to "clock_in", action: "clock_in" %>
+<%= button_to "clock_out", action: "clock_out" %>
+
+<div class="in">
+  <h1>In</h1>
+  <% @punches.each do |f| %>
+    <%= f.in_format %>
+    <br>
+  <% end %>
+</div>
+
+<div class="out">
+  <h1>Out</h1>
+  <% @punches.each do |f| %>
+    <%= f.out_format %>
+    <br>
+  <% end %>
+</div>
