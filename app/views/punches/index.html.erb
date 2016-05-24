@@ -5,7 +5,6 @@
   <h1>In</h1>
   <% @punches.each do |f| %>
     <%= f.in_format %>
-    <br>
   <% end %>
 </div>
 
@@ -13,6 +12,10 @@
   <h1>Out</h1>
   <% @punches.each do |f| %>
     <%= f.out_format %>
-    <br>
   <% end %>
+</div>
+
+<div class="time_worked">
+  <h1>Time</h1>
+  You have worked: <%= @punches.first.time_worked %> hours.
 </div>

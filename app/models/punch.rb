@@ -7,6 +7,10 @@ class Punch < ActiveRecord::Base
     self.update_attributes(out: DateTime.now)
   end
 
+  def time_worked
+    ((self.out - self.in) / 3600).round(2)
+  end
+
   def in_format
     self.in.strftime('%I:%M:%S %p on %a %b %d %Y')
   end
@@ -14,4 +18,6 @@ class Punch < ActiveRecord::Base
   def out_format
     self.out.strftime('%I:%M:%S %p on %a %b %d %Y')
   end
+
+
 end
