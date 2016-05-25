@@ -11,11 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160522184902) do
+ActiveRecord::Schema.define(version: 20160525011836) do
 
   create_table "punches", force: :cascade do |t|
     t.datetime "in"
     t.datetime "out"
+    t.integer  "work_day_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "work_days", force: :cascade do |t|
+    t.datetime "work_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

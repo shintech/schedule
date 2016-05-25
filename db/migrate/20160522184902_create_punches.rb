@@ -3,7 +3,7 @@ class CreatePunches < ActiveRecord::Migration
     create_table :punches do |t|
       t.datetime :in
       t.datetime :out
-
+      t.integer :work_day_id
       t.timestamps null: false
     end
   end

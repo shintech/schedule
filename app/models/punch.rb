@@ -1,4 +1,7 @@
 class Punch < ActiveRecord::Base
+
+  belongs_to :work_day
+  
   def clock_in
     self.update_attributes(in: DateTime.now)
   end
