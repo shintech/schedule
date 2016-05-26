@@ -4,15 +4,15 @@ class PunchesController < ApplicationController
   end
 
   def clock_in
-    @punch = Punch.first
-    @punch.clock_in
-    # Punch.first.update_attributes(in: DateTime.now)
+    @punch = Punch.create(in: DateTime.now)
+    # @punch.clock_in
+    # Punch.last.update_attributes(in: DateTime.now)
     redirect_to :back
 
   end
 
   def clock_out
-    @punch = Punch.first
+    @punch = Punch.last
     @punch.clock_out
     redirect_to :back
 

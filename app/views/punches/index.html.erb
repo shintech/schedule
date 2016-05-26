@@ -1,21 +1,24 @@
 <%= button_to "clock_in", action: "clock_in" %>
 <%= button_to "clock_out", action: "clock_out" %>
-
+<h1><%= @punches.last.in.strftime('%a %b %d %Y') %></h1>
 <div class="in">
   <h1>In</h1>
-  <% @punches.each do |f| %>
-    <%= f.in_format %>
-  <% end %>
+
+  <%= @punches.last.in.strftime('%I:%M:%S %p on %a %b %d %Y') %>
 </div>
 
 <div class="out">
   <h1>Out</h1>
-  <% @punches.each do |f| %>
-    <%= f.out_format %>
+  <% if @punches.last.out? %>
+  <%= @punches.last.out.strftime('%I:%M:%S %p on %a %b %d %Y') %>
   <% end %>
 </div>
 
 <div class="time_worked">
   <h1>Time</h1>
-  You have worked: <%= @punches.first.time_worked %> hours.
+  <% if @punches.last.out? %>
+
+  You have worked: <%= @punches.last.time_worked %> hours today.
+  <% end %>
+
 </div>
