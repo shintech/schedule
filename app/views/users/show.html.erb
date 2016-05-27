@@ -1,1 +1,10 @@
 <h1><%= @user.name %></h1>
+
+<% @user.work_days.each do |f| %>
+  <h1><%= f.work_date.strftime('%a %b %d %Y') %></h1>
+
+  <% f.punches.each do |x| %>
+    In: <%= x.in.strftime('%I:%M:%S %p') %><br>
+    Out: <%= x.out.strftime('%I:%M:%S %p') %><br>
+  <% end %>
+<% end %>
