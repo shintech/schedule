@@ -5,17 +5,15 @@ class PunchesController < ApplicationController
 
   def clock_in
     @punch = Punch.create(in: DateTime.now)
-    # @punch.clock_in
-    # Punch.last.update_attributes(in: DateTime.now)
+    flash[:notice] = "Successfully clocked in at " + "#{@punch.in.strftime('%I:%M %p')}"
     redirect_to :back
-
   end
 
   def clock_out
     @punch = Punch.last
-    @punch.clock_out
+    @punch.update_attributes(out: DateTime.now)
+    flash[:notice] = "Successfully clocked out at " + "#{@punch.out.strftime('%I:%M %p')}"
     redirect_to :back
-
   end
 
   def create
