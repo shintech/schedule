@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  get 'users/index'
+
+  get 'users/show'
+
+  get 'users/new'
+
+  get 'users/edit'
+
   get 'pay_periods/index'
 
   get 'pay_periods/show'
