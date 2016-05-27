@@ -5,5 +5,6 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-Punch.create(in: DateTime.now, out: DateTime.now + 8.hours, work_day_id: 1)
-WorkDay.create()
+Punch.create(in: DateTime.now, out: DateTime.now + 8.hours, work_day_id: 1, user_id: 1)
+WorkDay.create(user_id: 1)
+User.create(first_name: "Nick", last_name: "Cage")

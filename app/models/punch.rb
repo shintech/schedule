@@ -1,5 +1,6 @@
 class Punch < ActiveRecord::Base
 
+  belongs_to :user
   belongs_to :work_day
 
   def clock_in

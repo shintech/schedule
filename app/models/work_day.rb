@@ -1,4 +1,5 @@
 class WorkDay < ActiveRecord::Base
+  belongs_to :user
   belongs_to :pay_period
   has_many :punches
   def time_worked
