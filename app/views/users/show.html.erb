@@ -6,5 +6,6 @@
   <% f.punches.each do |x| %>
     In: <%= x.in.strftime('%I:%M:%S %p') %><br>
     Out: <%= x.out.strftime('%I:%M:%S %p') %><br>
+    Total: <%= ((x.out - x.in) / 3600).round(2) %> hours
   <% end %>
 <% end %>
