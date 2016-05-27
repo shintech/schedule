@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  get 'pay_periods/index'
+
+  get 'pay_periods/show'
+
+  get 'pay_periods/new'
+
+  get 'pay_periods/edit'
+
   resources :work_days
   root 'application#index'
   get 'punches/index' => 'punches#index'
