@@ -1,2 +1,5 @@
-<h1>PayPeriods#show</h1>
-<p>Find me in app/views/pay_periods/show.html.erb</p>
+<h1><%= "#{@pay_period.work_days.first.work_date.strftime('%a %b %d %Y')} - #{@pay_period.work_days.last.work_date.strftime('%a %b %d %Y')}" %></h1>
+<% @pay_period.work_days.each do |f| %>
+  <%= f.work_date.strftime('%a %b %d %Y') %>
+  <br>
+<% end %>

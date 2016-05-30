@@ -1,2 +1,3 @@
-<h1>PayPeriods#index</h1>
-<p>Find me in app/views/pay_periods/index.html.erb</p>
+<% @pay_periods.each do |f| %>
+ <%= link_to "#{f.work_days.first.work_date.strftime('%a %b %d %Y')} - #{f.work_days.last.work_date.strftime('%a %b %d %Y')}", pay_period_path(f) %>
+<% end %>

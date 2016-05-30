@@ -1,5 +1,5 @@
 <h1>Days in this pay period..</h1>
 <% @work_days.each do |day| %>
-  <%= link_to day.created_at.strftime('%a %b %d %Y'), work_day_path(day) %>
+  <%= link_to day.work_date.strftime('%a %b %d %Y'), work_day_path(day) %>
   <br>
 <% end %>
