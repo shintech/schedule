@@ -3,7 +3,9 @@ Rails.application.routes.draw do
   resources :pay_periods
 
   resources :work_days
-  root 'application#index'
+  root 'access#login'
+  get 'access/attempt_login' => 'access#attempt_login'
+  post 'access/attempt_login' => 'access#attempt_login'
   get 'punches/index' => 'punches#index'
   get 'punches/clock_in' => 'punches#clock_in'
   post 'punches/clock_in' => 'punches#clock_in'

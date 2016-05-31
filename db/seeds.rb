@@ -23,4 +23,4 @@ end
 
 PayPeriod.create
 
-User.create(first_name: "Nick", last_name: "Cage")
+User.create(first_name: "Nick", last_name: "Cage", username: "nickcage", password: 'test')
