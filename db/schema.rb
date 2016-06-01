@@ -32,8 +32,9 @@ ActiveRecord::Schema.define(version: 20160527183606) do
     t.string   "last_name"
     t.string   "username"
     t.string   "password_digest"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.boolean  "clocked_in",      default: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
   end
 
   create_table "work_days", force: :cascade do |t|
