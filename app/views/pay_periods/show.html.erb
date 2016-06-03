@@ -1,5 +1,5 @@
 <h1><%= "#{@pay_period.work_days.first.work_date.strftime('%a %b %d %Y')} - #{@pay_period.work_days.last.work_date.strftime('%a %b %d %Y')}" %></h1>
 <% @pay_period.work_days.each do |f| %>
-  <%= f.work_date.strftime('%a %b %d %Y') %>
+  <%= link_to f.work_date.strftime('%a %b %d %Y'), work_day_path(f) %>
   <br>
 <% end %>

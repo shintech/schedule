@@ -4,7 +4,7 @@ class WorkDaysController < ApplicationController
   end
 
   def show
-    @work_day = WorkDay.find(params[:id])
+    @work_day = WorkDay.where(id: params[:id], user_id: current_user.id).first
   end
 
   def new
@@ -38,6 +38,6 @@ class WorkDaysController < ApplicationController
   private
 
   def work_day_params
-    params.require(:work_day)
+    params.require(:work_day).permit(:work_date).merge(:user_id)
   end
 end
