@@ -6,6 +6,10 @@
 <% end %>
 <h1>Pay Periods</h1>
 <% @pay_periods.each do |f| %>
- <%= link_to "#{f.work_days.first.work_date.strftime('%a %b %d %Y')} - #{f.work_days.last.work_date.strftime('%a %b %d %Y')}", pay_period_path(f) %>
- <br>
+  <% if f.work_days.first %>
+   <%= link_to "#{f.work_days.first.work_date.strftime('%a %b %d %Y')} - #{f.work_days.last.work_date.strftime('%a %b %d %Y')}", pay_period_path(f) %>
+   <br>
+  <% else %>
+    No recorded time...
+  <% end %>
 <% end %>
