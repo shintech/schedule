@@ -5,6 +5,7 @@ class PayPeriodsController < ApplicationController
 
   def show
     @pay_period = PayPeriod.find(params[:id])
+    @work_days = @pay_period.work_days.where(user_id: current_user.id)
   end
 
   def new
@@ -23,5 +24,5 @@ class PayPeriodsController < ApplicationController
     @pay_period = PayPeriod.find[params[:id]]
     @pay_period.update_attributes(pay_period_params)
   end
-  
+
 end

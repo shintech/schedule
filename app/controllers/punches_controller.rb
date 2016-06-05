@@ -4,7 +4,8 @@ class PunchesController < ApplicationController
   end
 
   def clock_in
-    @punch = Punch.create(in: DateTime.now, user_id: current_user.id)
+    @work_day = WorkDay.create(user_id: current_user.id, pay_period_id: PayPeriod.first.id)
+    @punch = Punch.create(in: DateTime.now, user_id: current_user.id, work_day_id: @work_day.id)
     @punch.user.update_attributes(clocked_in: true)
     flash[:notice] = "Successfully clocked in at " + "#{@punch.in.strftime('%I:%M %p')}"
     redirect_to :back

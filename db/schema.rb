@@ -38,11 +38,11 @@ ActiveRecord::Schema.define(version: 20160527183606) do
   end
 
   create_table "work_days", force: :cascade do |t|
-    t.datetime "work_date"
+    t.datetime "work_date",     default: '2016-06-04 07:00:14'
     t.integer  "pay_period_id"
     t.integer  "user_id"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",                                    null: false
+    t.datetime "updated_at",                                    null: false
   end
 
 end

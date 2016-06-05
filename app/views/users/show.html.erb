@@ -1,15 +1,6 @@
 <h1><%= @user.name %></h1>
 <%= button_to "clock_in", controller: 'punches', action: "clock_in" %>
 <%= button_to "clock_out", controller: 'punches', action: "clock_out" %>
-<!-- <% @user.work_days.each do |f| %>
-  <h1><%= f.work_date.strftime('%a %b %d %Y') %></h1>
-
-  <% f.punches.each do |x| %>
-    In: <%= x.in.strftime('%I:%M:%S %p') %><br>
-    Out: <%= x.out.strftime('%I:%M:%S %p') %><br>
-    Total: <%= ((x.out - x.in) / 3600).round(2) %> hours
-  <% end %>
-<% end %> -->
 
 <h1>Pay Periods</h1>
 <% @pay_periods.each do |f| %>

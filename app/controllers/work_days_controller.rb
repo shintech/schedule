@@ -1,6 +1,6 @@
 class WorkDaysController < ApplicationController
   def index
-    @work_days = WorkDay.all
+    @work_days = WorkDay.where(user_id: current_user.id)
   end
 
   def show
