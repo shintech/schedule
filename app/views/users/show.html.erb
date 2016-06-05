@@ -1,7 +1,9 @@
 <h1><%= @user.name %></h1>
-<%= button_to "clock_in", controller: 'punches', action: "clock_in" %>
-<%= button_to "clock_out", controller: 'punches', action: "clock_out" %>
-
+<% if @user.clocked_in %>
+  <%= button_to "clock_out", controller: 'punches', action: "clock_out" %>
+<% else %>
+  <%= button_to "clock_in", controller: 'punches', action: "clock_in" %>
+<% end %>
 <h1>Pay Periods</h1>
 <% @pay_periods.each do |f| %>
  <%= link_to "#{f.work_days.first.work_date.strftime('%a %b %d %Y')} - #{f.work_days.last.work_date.strftime('%a %b %d %Y')}", pay_period_path(f) %>
