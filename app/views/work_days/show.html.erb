@@ -1,21 +1,20 @@
 <% if @work_day %>
   <h1><%= @work_day.work_date.strftime('%a %b %d %Y') %></h1>
-  <% @work_day.punches.each do |f| %>
+
     <h2>In</h2>
-    <%= f.in.strftime('%I:%M:%S %p') %>
+    <%= @work_day.punch.in.strftime('%I:%M:%S %p') %>
     <h2>out</h2>
-    <% if f.out %>
-      <%= f.out.strftime('%I:%M:%S %p') %>
+    <% if @work_day.punch.out %>
+      <%= @work_day.punch.out.strftime('%I:%M:%S %p') %>
       <div class="time_worked">
         <h1>Time</h1>
-        <%=f.time_worked %> hours.
+        <%=@work_day.punch.time_worked %> hours.
       </div>
     <% else %>
       pending...
     <% end %>
 
 
-  <% end %>
 <% else %>
   No time logged yet.
 <% end %>

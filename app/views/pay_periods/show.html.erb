@@ -2,6 +2,6 @@
 
 <% @work_days.each do |f| %>
 <% if f %>
-  <%= link_to f.work_date.strftime('%a %b %d %Y'), work_day_path(f) %><br>
+  <%= link_to f.work_date.strftime('%a %b %d %Y'), work_day_path(f) %> Hours Worked: <%= f.punch.time_worked %><br>
   <% end %>
 <% end %>

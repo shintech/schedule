@@ -11,38 +11,6 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160527183606) do
-
-  create_table "pay_periods", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "punches", force: :cascade do |t|
-    t.datetime "in"
-    t.datetime "out"
-    t.integer  "work_day_id"
-    t.integer  "user_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-  end
-
-  create_table "users", force: :cascade do |t|
-    t.string   "first_name"
-    t.string   "last_name"
-    t.string   "username"
-    t.string   "password_digest"
-    t.boolean  "clocked_in",      default: false
-    t.datetime "created_at",                      null: false
-    t.datetime "updated_at",                      null: false
-  end
-
-  create_table "work_days", force: :cascade do |t|
-    t.datetime "work_date",     default: '2016-06-05 17:31:22'
-    t.integer  "pay_period_id"
-    t.integer  "user_id"
-    t.datetime "created_at",                                    null: false
-    t.datetime "updated_at",                                    null: false
-  end
+ActiveRecord::Schema.define(version: 0) do
 
 end
